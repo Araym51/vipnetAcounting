@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Town(models.Model):
-    town_name = models.CharField(verbose_name='Город', max_length=128)
+    town_name = models.CharField(verbose_name='Город', max_length=128, unique=True)
 
 
 class Street(models.Model):
