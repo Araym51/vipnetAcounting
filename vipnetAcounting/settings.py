@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     #my apps:
     'location',
     'users',
+    'vipnet_users',
+    'pc_info',
 ]
 
 MIDDLEWARE = [
