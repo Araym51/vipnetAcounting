@@ -7,5 +7,5 @@ from pc_info.serializator import PcInfoModelSeriazer
 
 
 class PcInfoModelViewSet(ModelViewSet):
-    queryset = PcInfo
+    queryset = PcInfo.objects.all()
     serializer_class = PcInfoModelSeriazer

@@ -8,5 +8,5 @@ from .serializers import VipNetUsersSerializer
 # Create your views here.
 
 class VipNetUsersViewSet(ModelViewSet):
-    queryset = VipNetUsers
+    queryset = VipNetUsers.objects.all()
     serializer_class = VipNetUsersSerializer
