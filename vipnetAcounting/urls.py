@@ -17,11 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter, SimpleRouter
+
 from location.views import TownModelViewSet, StreetModelViewSet
+from vipnet_users.views import VipNetUsersViewSet
 
 router = DefaultRouter()
 router.register('town', TownModelViewSet)
 router.register('street', StreetModelViewSet)
+router.register('vipnet_users', VipNetUsersViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
