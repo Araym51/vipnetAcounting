@@ -20,11 +20,14 @@ from rest_framework.routers import DefaultRouter, SimpleRouter
 
 from location.views import TownModelViewSet, StreetModelViewSet
 from vipnet_users.views import VipNetUsersViewSet
+from pc_info.views import PcInfoModelViewSet
 
 router = DefaultRouter()
 router.register('town', TownModelViewSet)
 router.register('street', StreetModelViewSet)
 router.register('vipnet_users', VipNetUsersViewSet)
+router.register('pc_info', PcInfoModelViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
