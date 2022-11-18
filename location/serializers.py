@@ -10,6 +10,7 @@ class TownModelSerializer(ModelSerializer):
 
 
 class StreetModelSerializer(ModelSerializer):
+    town_name = TownModelSerializer()
     class Meta:
         model = Street
         fields = '__all__'

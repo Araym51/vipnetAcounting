@@ -12,5 +12,4 @@ class VipNetUsers(models.Model):
     fathers_name = models.CharField(verbose_name='Отчество', max_length=150)
     division = models.CharField(verbose_name='Подразделение', max_length=150)
     position = models.CharField(verbose_name='Должность', max_length=150)
-    street = models.ForeignKey(Street, on_delete=models.CASCADE)
     vipnet_name = models.ForeignKey(PcInfo, on_delete=models.CASCADE)
