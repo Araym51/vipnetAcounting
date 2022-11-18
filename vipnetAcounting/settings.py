@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #сторонние библиотеки:
     'rest_framework',
     'corsheaders',
+    'drf_yasg',  # auto documentation
     #my apps:
     'location',
     'users',

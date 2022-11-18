@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter, SimpleRouter
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+from rest_framework import permissions
 
 from location.views import TownModelViewSet, StreetModelViewSet
 from vipnet_users.views import VipNetUsersViewSet
@@ -27,9 +30,22 @@ router.register('street', StreetModelViewSet)
 router.register('vipnet_users', VipNetUsersViewSet)
 router.register('pc_info', PcInfoModelViewSet)
 
+schema_view = get_schema_view(
+    openapi.Info(
+        title='VipNet Accounting',
+        default_version='1',
+        description='Documentation to out project',
+        contact=openapi.Contact(email='araimo@yandex.ru'),
+        license=openapi.License(name='MIT License'),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include(router.urls)),
+    path('swagger/', schema_view.with_ui('swagger')),
+    path('redoc/', schema_view.with_ui('redoc')),
 ]

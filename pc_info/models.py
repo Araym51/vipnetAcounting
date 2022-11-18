@@ -1,5 +1,8 @@
 from django.db import models
 
+from location.models import Street
+
+
 # Create your models here.
 
 
@@ -24,3 +27,4 @@ class PcInfo(models.Model):
     kaspersky = models.BooleanField(verbose_name='Начличие антивируса Касперский', default=True)
     vipnet_name = models.CharField(verbose_name='Название VipNet ключа', max_length=64)
     is_active = models.BooleanField(verbose_name='Активен', default=True)
+    office_number = models.ForeignKey(Street, on_delete=models.CASCADE)
